@@ -1,0 +1,73 @@
+﻿@model LucasMawdsley_NETD3202_Lab5.Models.Product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Car</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4 ml-5">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!--Hidden input to hold product ID for validation-->
+            <input type="hidden" asp-for="ProductId" />
+            <!--Text input for product Name-->
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Name:</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <!--Text input for product Make-->
+            <div class="form-group">
+                <label asp-for="Make" class="control-label">Manufacturer:</label>
+                <input asp-for="Make" class="form-control" />
+                <span asp-validation-for="Make" class="text-danger"></span>
+            </div>
+            <!--Text input for product Model-->
+            <div class="form-group">
+                <label asp-for="Model" class="control-label">Model:</label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+            <!--Text input for product Description-->
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Description:</label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <!--Text input for product Quantity-->
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label">Quantity:</label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <!--Text input for product Unit Price-->
+            <div class="form-group">
+                <label asp-for="UnitPrice" class="control-label">Uint Price:</label>
+                <input asp-for="UnitPrice" class="form-control" />
+                <span asp-validation-for="UnitPrice" class="text-danger"></span>
+            </div>
+            <!--Dropdown menu for product Vendor-->
+            <div class="form-group">
+                <label asp-for="VendorId" class="control-label">Vendor ID:</label>
+                @Html.DropDownListFor(model => model.VendorId, Model.VendorList, "Select a Vendor", new { id = "VendorId", @class = "form-control" })
+            </div>
+            <!--Update product button-->
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--Return to list, no changes-->
+<div class="ml-5">
+    <a class="btn btn-dark mb-3" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

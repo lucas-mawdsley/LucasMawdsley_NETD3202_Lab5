@@ -1,0 +1,75 @@
+﻿@model IEnumerable<LucasMawdsley_NETD3202_Lab5.Models.Vendor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Vendors</h1>
+
+<p>
+    <a class="btn btn-dark" asp-action="Create">Create New</a>
+</p>
+<!--Table to display all relevant fields for all vendors-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepPhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepEmail)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--Outputs the fields-->
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepPhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepEmail)
+            </td>
+            <!--Links to Retrieve, Update, and Delete operations-->
+            <td>
+                <a class="btn btn-dark" asp-action="Edit" asp-route-id="@item.VendorId">Edit</a> |
+                <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.VendorId">Details</a> |
+                <a class="btn btn-dark" asp-action="Delete" asp-route-id="@item.VendorId">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

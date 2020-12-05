@@ -1,0 +1,63 @@
+﻿@model LucasMawdsley_NETD3202_Lab5.Models.Vendor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Vendor</h4>
+    <hr />
+    <!--Displays all vendor values with labels-->
+    <dl class="row ml-3">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VendorId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VendorId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RepLastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RepLastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RepFirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RepFirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RepPhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RepPhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RepEmail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RepEmail)
+        </dd>
+    </dl>
+</div>
+<div class="ml-4">
+    <!--Edit vendor-->
+    <a class="btn btn-dark" asp-action="Edit" asp-route-id="@Model.VendorId">Edit</a> |
+    <!--Return to list-->
+    <a class="btn btn-dark" asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,68 @@
+﻿@model LucasMawdsley_NETD3202_Lab5.Models.Vendor
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Vendor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4 ml-5">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!--Hidden input to hold vendor ID for validation-->
+            <input type="hidden" asp-for="VendorId" />
+            <!--Text input for vendor Name-->
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Name:</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <!--Text input for vendor Address-->
+            <div class="form-group">
+                <label asp-for="Address" class="control-label">Address:</label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <!--Text input for vendor representative Last Name-->
+            <div class="form-group">
+                <label asp-for="RepLastName" class="control-label">Sales Rep. Last Name:</label>
+                <input asp-for="RepLastName" class="form-control" />
+                <span asp-validation-for="RepLastName" class="text-danger"></span>
+            </div>
+            <!--Text input for vendor representative First Name-->
+            <div class="form-group">
+                <label asp-for="RepFirstName" class="control-label">Sales Rep. First Name:</label>
+                <input asp-for="RepFirstName" class="form-control" />
+                <span asp-validation-for="RepFirstName" class="text-danger"></span>
+            </div>
+            <!--Text input for vendor representative Phone Number-->
+            <div class="form-group">
+                <label asp-for="RepPhoneNumber" class="control-label">Sales Rep. Phone Number:</label>
+                <input asp-for="RepPhoneNumber" class="form-control" />
+                <span asp-validation-for="RepPhoneNumber" class="text-danger"></span>
+            </div>
+            <!--Text input for cendor representative Email Address-->
+            <div class="form-group">
+                <label asp-for="RepEmail" class="control-label">Sales Rep. Email Address:</label>
+                <input asp-for="RepEmail" class="form-control" />
+                <span asp-validation-for="RepEmail" class="text-danger"></span>
+            </div>
+            <!--Update vendor button-->
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--Return to list, no changes-->
+<div class="ml-5">
+    <a class="btn btn-dark mb-3" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

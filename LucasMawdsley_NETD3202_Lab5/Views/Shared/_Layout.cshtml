@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Title intentionally left as filename for reference while running-->
+    <title>@ViewData["Title"] - LucasMawdsley_NETD3202_Lab5</title>
+    <!--uses custom favicon-->
+    <link rel="icon" type="image/png" href="~/favicon.png"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <!--Uses partial view Header for unified site navbar/header-->
+        <div class="content-wrapper">
+            @Html.Partial("_Header")
+        </div>
+    </header>
+    <div id="body">
+        <!--Main content-->
+        <section class="content-wrapper main-content clearfix">
+            @RenderBody()
+        </section>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <!--Uses partial view Footer for unified site footer-->
+        <div class="float-left">
+            @Html.Partial("_Footer")
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
